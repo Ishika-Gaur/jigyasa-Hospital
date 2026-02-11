@@ -102,19 +102,10 @@ const HospitalVideoGallery = () => {
       category: 'patients',
       videoUrl: 'patientCareVd.mp4',
       thumbnail: 'ph-5.jpeg',
-      title: 'Doctor’s Care & Concern for Patients',
-      description: 'A video highlighting the doctor’s dedication, compassion, and continuous care towards patients’ health and well-being.',
+      title: 'Doctors Care & Concern for Patients',
+      description: 'A video highlighting the doctors dedication, compassion, and continuous care towards patients health and well-being.',
       duration: '0:29'
     },
-    // {
-    //   id: 12,
-    //   category: 'doctors',
-    //   videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-    //   thumbnail: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&h=600&fit=crop',
-    //   title: 'Nursing Excellence',
-    //   description: 'A day in the life of our compassionate nursing staff.',
-    //   duration: '6:00'
-    // }
   ];
 
   const filters = [
@@ -242,30 +233,30 @@ const HospitalVideoGallery = () => {
       objectFit: 'cover',
       transition: 'transform 0.5s ease'
     },
-    // playButton: {
-    //   position: 'absolute',
-    //   top: '50%',
-    //   left: '50%',
-    //   transform: 'translate(-50%, -50%)',
-    //   width: '80px',
-    //   height: '80px',
-    //   background: 'linear-gradient(135deg, #0dbd9d, #25b1a8)',
-    //   borderRadius: '50%',
-    //   display: 'flex',
-    //   alignItems: 'center',
-    //   justifyContent: 'center',
-    //   boxShadow: '0 8px 30px rgba(13, 189, 157, 0.5)',
-    //   transition: 'all 0.3s ease',
-    //   zIndex: 2
-    // },
-    // playIcon: {
-    //   width: 0,
-    //   height: 0,
-    //   borderLeft: '25px solid white',
-    //   borderTop: '15px solid transparent',
-    //   borderBottom: '15px solid transparent',
-    //   marginLeft: '8px'
-    // },
+    playButton: {
+      position: 'absolute',
+      top: '50%',
+      left: '50%',
+      transform: 'translate(-50%, -50%)',
+      width: '80px',
+      height: '80px',
+      background: 'linear-gradient(135deg, #0dbd9d, #25b1a8)',
+      borderRadius: '50%',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      boxShadow: '0 8px 30px rgba(13, 189, 157, 0.5)',
+      transition: 'all 0.3s ease',
+      zIndex: 2
+    },
+    playIcon: {
+      width: 0,
+      height: 0,
+      borderLeft: '25px solid white',
+      borderTop: '15px solid transparent',
+      borderBottom: '15px solid transparent',
+      marginLeft: '8px'
+    },
     duration: {
       position: 'absolute',
       bottom: '15px',
@@ -407,20 +398,83 @@ const HospitalVideoGallery = () => {
             color: #0dbd9d;
           }
 
-          @media (max-width: 600px) {
-            .video-wrapper {
-              height: 220px !important;
+          /* Mobile: 2 cards per row */
+          @media (max-width: 768px) {
+            .video-grid {
+              grid-template-columns: repeat(2, 1fr) !important;
+              gap: 20px !important;
             }
-            
+
+            .video-wrapper {
+              height: 200px !important;
+            }
+
             .play-button {
               width: 60px !important;
               height: 60px !important;
             }
+
+            .play-icon {
+              border-left: 18px solid white !important;
+              border-top: 11px solid transparent !important;
+              border-bottom: 11px solid transparent !important;
+              margin-left: 6px !important;
+            }
+
+            .video-card .video-title {
+              font-size: 0.95rem !important;
+              margin-bottom: 0 !important;
+            }
+
+            /* Hide description on mobile */
+            .video-card .video-description {
+              display: none !important;
+            }
+
+            .video-card .info {
+              padding: 16px !important;
+            }
+          }
+
+          @media (max-width: 600px) {
+            .video-grid {
+              grid-template-columns: repeat(2, 1fr) !important;
+              gap: 16px !important;
+            }
+
+            .video-wrapper {
+              height: 180px !important;
+            }
+            
+            .play-button {
+              width: 50px !important;
+              height: 50px !important;
+            }
             
             .play-icon {
-              border-left-width: 18px !important;
-              border-top-width: 11px !important;
-              border-bottom-width: 11px !important;
+              border-left: 15px solid white !important;
+              border-top: 9px solid transparent !important;
+              border-bottom: 9px solid transparent !important;
+              margin-left: 5px !important;
+            }
+
+            .video-card .video-title {
+              font-size: 0.9rem !important;
+              margin-bottom: 0 !important;
+            }
+
+            /* Hide description on mobile */
+            .video-card .video-description {
+              display: none !important;
+            }
+
+            .video-card .info {
+              padding: 12px !important;
+            }
+
+            .duration {
+              font-size: 0.75rem !important;
+              padding: 4px 10px !important;
             }
           }
         `}
@@ -450,7 +504,7 @@ const HospitalVideoGallery = () => {
 
       {/* Video Grid */}
       <div style={styles.container}>
-        <div style={styles.grid}>
+        <div className="video-grid" style={styles.grid}>
           {filteredItems.map((item, index) => (
             <div 
               key={item.id} 
@@ -471,16 +525,16 @@ const HospitalVideoGallery = () => {
                 <div className="play-button" style={styles.playButton}>
                   <div className="play-icon" style={styles.playIcon}></div>
                 </div>
-                <div style={styles.duration}>{item.duration}</div>
+                <div className="duration" style={styles.duration}>{item.duration}</div>
                 <div className="video-overlay" style={styles.overlay}>
                   <span style={styles.category}>
                     {filters.find(f => f.id === item.category)?.label || item.category}
                   </span>
                 </div>
               </div>
-              <div style={styles.info}>
+              <div className="info" style={styles.info}>
                 <h3 className="video-title" style={styles.title}>{item.title}</h3>
-                <p style={styles.description}>{item.description}</p>
+                <p className="video-description" style={styles.description}>{item.description}</p>
               </div>
             </div>
           ))}

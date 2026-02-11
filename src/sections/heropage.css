@@ -56,8 +56,8 @@
 /* Icon Styling */
 .heropage-icon {
   margin-top: 10px;
-    font-size: 2rem;
-    color: white;
+  font-size: 2rem;
+  color: white;
 }
 
 /* ✅ Responsive Adjustments */
@@ -66,19 +66,20 @@
     padding: 20px;
   }
 
+  .card-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 0 16px;
+    margin-top: 20px;
+  }
+
   .card-item {
     padding: 24px 16px;
     font-size: 15px;
   }
 
-  .icon {
-    font-size: 24px;
-  }
-
-  .card-list {
-    gap: 20px;
-    padding: 0 16px;
-    margin-top: 20px;
+  .heropage-icon {
+    font-size: 1.5rem;
   }
 }
 
@@ -87,17 +88,17 @@
     padding: 10px;
   }
 
+  .card-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
   .card-item {
     padding: 20px 12px;
     font-size: 14px;
   }
 
-  .icon {
-    font-size: 22px;
-  }
-
-  .card-list {
-    grid-template-columns: 1fr;
-    gap: 16px;
+  .heropage-icon {
+    font-size: 1.3rem;
   }
 }

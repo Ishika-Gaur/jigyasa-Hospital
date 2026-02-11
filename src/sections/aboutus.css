@@ -103,14 +103,14 @@
   padding: 30px 35px;
  
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-  max-width: 320px;
+  max-width: 400px;
   font-size: 14px;
   z-index: 2;
   text-align: left;
 }
 .badge-icon {
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 70px;
   margin-bottom: 25px;
   background: linear-gradient(135deg, #0dbd9d, #25b1a8);
   border-radius: 50%;

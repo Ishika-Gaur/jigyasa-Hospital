@@ -378,19 +378,22 @@ const HospitalGallery = () => {
       lineHeight: '1.6',
       margin: 0
     },
-    modal: {
-      display: selectedItem ? 'flex' : 'none',
-      position: 'fixed',
-      zIndex: 1000,
-      left: 0,
-      top: 0,
-      width: '100%',
-      height: '100%',
-      background: 'rgba(0, 0, 0, 0.95)',
-      alignItems: 'center',
-      justifyContent: 'center',
-      padding: '20px'
-    },
+ modal: {
+  display: selectedItem ? 'flex' : 'none',
+  position: 'fixed',
+  zIndex: 1000,
+  left: 0,
+  top: 0,
+  width: '100%',
+  height: '100%',
+  background: 'rgba(0, 0, 0, 0.3)', // lighter overlay
+  backdropFilter: 'blur(8px)',     // blur effect
+  WebkitBackdropFilter: 'blur(8px)', // for Safari support
+  alignItems: 'center',
+  justifyContent: 'center',
+  padding: '20px'
+},
+
     modalInner: {
       background: 'white',
       borderRadius: '20px',
@@ -614,9 +617,58 @@ const HospitalGallery = () => {
             }
           }
 
-          @media (max-width: 600px) {
+          /* Mobile: 2 cards per row */
+          @media (max-width: 768px) {
+            .gallery-grid {
+              grid-template-columns: repeat(2, 1fr) !important;
+              gap: 20px !important;
+            }
+
             .gallery-image-wrapper {
-              height: 220px !important;
+              height: 200px !important;
+            }
+
+            .gallery-card .gallery-title {
+              font-size: 0.95rem !important;
+              margin-bottom: 0 !important;
+            }
+
+            /* Hide description on mobile */
+            .gallery-card .gallery-description {
+              display: none !important;
+            }
+
+            .gallery-card .info {
+              padding: 16px !important;
+            }
+          }
+
+          @media (max-width: 600px) {
+            .gallery-grid {
+              grid-template-columns: repeat(2, 1fr) !important;
+              gap: 16px !important;
+            }
+
+            .gallery-image-wrapper {
+              height: 180px !important;
+            }
+
+            .gallery-card .gallery-title {
+              font-size: 0.9rem !important;
+              margin-bottom: 0 !important;
+            }
+
+            /* Hide description on mobile */
+            .gallery-card .gallery-description {
+              display: none !important;
+            }
+
+            .gallery-card {
+              padding: 0 !important;
+            }
+
+            .info {
+              padding: 12px !important;
             }
           }
         `}
@@ -646,7 +698,7 @@ const HospitalGallery = () => {
 
       {/* Gallery Grid */}
       <div style={styles.container}>
-        <div style={styles.grid}>
+        <div className="gallery-grid" style={styles.grid}>
           {filteredItems.map((item) => (
             <div 
               key={item.id} 
@@ -675,9 +727,9 @@ const HospitalGallery = () => {
                   </div>
                 )}
               </div>
-              <div style={styles.info}>
+              <div className="info" style={styles.info}>
                 <h3 className="gallery-title" style={styles.title}>{item.title}</h3>
-                <p style={styles.description}>{item.description}</p>
+                <p className="gallery-description" style={styles.description}>{item.description}</p>
               </div>
             </div>
           ))}

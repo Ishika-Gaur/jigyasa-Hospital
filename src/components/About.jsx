@@ -1,8 +1,14 @@
-import React from "react";
-import "./about.css"; // already imported
+import React, { useState } from "react";
+import "./about.css";
 import Footer from "./Footer";
 
 const About = () => {
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
+
+  const handlePlayVideo = () => {
+    setIsVideoPlaying(true);
+  };
+
   return (
     <div className="about-page">
       {/* Hero Section */}
@@ -31,17 +37,36 @@ const About = () => {
 
         <div className="info-image">
           <div className="image-wrapper">
-            <img src="ph-5.jpeg" alt="Doctors" />
-            <a
-              href="patientCareVd.mp4"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="play-button"
-            >
-            </a>
+            {!isVideoPlaying ? (
+              <>
+                <img src="/ph-5.jpeg" alt="Doctors" className="video-thumbnail" />
+                <button
+                  onClick={handlePlayVideo}
+                  className="play-button"
+                  aria-label="Play video"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    className="play-icon"
+                  >
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </button>
+              </>
+            ) : (
+              <video
+                controls
+                autoPlay
+                className="video-player"
+                src="/patientCareVd.mp4"
+              >
+                Your browser does not support the video tag.
+              </video>
+            )}
           </div>
         </div>
-
       </section>
 
       {/* Stats Section */}
@@ -82,7 +107,6 @@ const About = () => {
             <img
               src="https://cdn-icons-png.flaticon.com/128/15192/15192700.png"
               alt="Medical Services Icon"
-
             />
           </div>
           <h3>Transparency On Report</h3>
