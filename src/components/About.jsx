@@ -29,18 +29,18 @@ const About = () => {
           </ul>
         </div>
 
-     <div className="info-image">
-  <div className="image-wrapper">
-    <img src="ph-5.jpeg" alt="Doctors" />
-    <a
-      href="patientCareVd.mp4"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="play-button"
-    >
-    </a>
-  </div>
-</div>
+        <div className="info-image">
+          <div className="image-wrapper">
+            <img src="ph-5.jpeg" alt="Doctors" />
+            <a
+              href="patientCareVd.mp4"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="play-button"
+            >
+            </a>
+          </div>
+        </div>
 
       </section>
 
