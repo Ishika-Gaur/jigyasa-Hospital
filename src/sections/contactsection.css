@@ -1,0 +1,386 @@
+.home-contact-section {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.home-contact-container {
+  flex: 1;
+  min-width: 320px;
+  max-width: 55%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.home-contact-right {
+  background: linear-gradient(145deg, #f0f4f4, #e8ebeb);
+  flex: 1;
+  min-width: 320px;
+  max-width: 40%;
+  border-radius: 20px;
+  box-shadow: 
+    20px 20px 60px #d1d9d9,
+    -20px -20px 60px #ffffff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+.home-contact-right::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(13, 189, 157, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.home-contact-right:hover::before {
+  left: 100%;
+}
+
+.home-contact-right:hover {
+  transform: translateY(-5px);
+  box-shadow: 
+    25px 25px 80px #d1d9d9,
+    -25px -25px 80px #ffffff;
+}
+
+.home-contact-form {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Animated Input Groups */
+.input-group {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 15px 20px;
+  border: 2px solid transparent;
+  background: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+  border-radius: 12px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
+  box-shadow: inset 2px 2px 5px #d1d9d9, inset -2px -2px 5px #ffffff;
+}
+
+.form-input:focus {
+  border-color: #0dbd9d;
+  background: rgba(255, 255, 255, 1);
+  transform: translateY(-2px);
+  box-shadow: 
+    inset 2px 2px 5px #d1d9d9, 
+    inset -2px -2px 5px #ffffff,
+    0 8px 25px rgba(13, 189, 157, 0.15);
+}
+
+.form-input::placeholder {
+  color: #999;
+  transition: all 0.3s ease;
+}
+
+.form-input:focus::placeholder {
+  transform: translateY(-20px);
+  opacity: 0;
+}
+
+/* Animated Underline */
+.input-underline {
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #0dbd9d, #25b1a8);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 2px;
+}
+
+.form-input:focus + .input-underline {
+  width: 100%;
+  left: 0;
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
+  font-family: inherit;
+}
+
+/* Enhanced Send Button */
+.send-button {
+  background: linear-gradient(135deg, #0dbd9d, #25b1a8);
+  color: white;
+  padding: 7px 25px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(13, 189, 157, 0.3);
+  transform: perspective(1px) translateZ(0);
+}
+
+.send-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.send-button:hover::before {
+  left: 100%;
+}
+
+.send-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(13, 189, 157, 0.4);
+}
+
+.send-button:active {
+  transform: translateY(0);
+}
+
+.button-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.send-icon {
+  font-size: 1.2rem;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-5px);
+  }
+  60% {
+    transform: translateY(-3px);
+  }
+}
+
+/* Enhanced Appointment Section - Compact Version */
+.appointment-section {
+  padding: 20px 30px;
+  border-top: 1px solid rgba(13, 189, 157, 0.1);
+  animation: fadeInUp 0.6s ease 0.3s both;
+  display: flex;
+  justify-content: center;
+}
+
+.appointment-section a {
+  text-decoration: none !important;
+  width: auto;
+}
+
+.book-appointment {
+  background: linear-gradient(135deg, #0dbd9d, #25b1a8);
+  color: white;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  width: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(13, 189, 157, 0.3);
+  text-decoration: none !important;
+  min-width: 180px;
+  white-space: nowrap;
+}
+
+.book-appointment:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(13, 189, 157, 0.4);
+  text-decoration: none !important;
+}
+
+.book-appointment:focus,
+.book-appointment:active,
+.book-appointment:visited {
+  text-decoration: none !important;
+}
+
+.appointment-icon {
+  font-size: 1.1rem;
+  animation: pulse 2s infinite;
+}
+.appointment-icon img {
+  width: 20px;   /* adjust size */
+  height: 20px;  /* keep square aspect */
+  object-fit: contain;
+  display: inline-block;
+}
+.send-icon img{
+   width: 30px;   /* adjust size */
+  height: 30px;  /* keep square aspect */
+  object-fit: contain;
+  display: inline-block;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Badge Styles */
+.home-contact-badge {
+  display: inline-block;
+  font-size: 16px;
+  color: #25b1a8;
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  background-color: #cff0ef;
+  padding: 4px 10px;
+  border-radius: 4px;
+  animation: fadeInUp 0.6s ease;
+}
+
+.home-contact-left h1 {
+  font-size: 2.2rem;
+  color: #111;
+  margin-bottom: 10px;
+  animation: fadeInUp 0.6s ease 0.1s both;
+}
+
+.home-contact-left p {
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  font-size: 1rem;
+  animation: fadeInUp 0.6s ease 0.2s both;
+}
+
+.home-card-section,
+.contact-info-card {
+  margin-bottom: 20px;
+  animation: fadeInUp 0.6s ease 0.3s both;
+}
+
+.home-span-cards {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.home-icon {
+  color: #0dbd9d;
+  font-size: 0.8rem;
+}
+
+.contact-info-card h3 {
+  margin: 10px 0 5px;
+  font-size: 1.2rem;
+}
+
+.contact-info-text,
+.home-info-text {
+  font-size: 0.95rem;
+  color: #333;
+  margin-left: 26px;
+  margin-bottom: 12px;
+}
+
+.home-map-container {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 900px) {
+  .home-contact-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .home-contact-container,
+  .home-contact-right {
+    max-width: 100%;
+  }
+
+  .home-contact-left h1 {
+    font-size: 1.8rem;
+  }
+
+  .home-contact-form {
+    padding: 20px;
+  }
+
+  .form-input {
+    font-size: 0.95rem;
+    padding: 12px 16px;
+  }
+
+  .send-button {
+    padding: 12px 25px;
+    font-size: 1rem;
+  }
+
+  .appointment-section {
+    padding: 15px 20px;
+  }
+  
+  .book-appointment {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    min-width: 160px;
+  }
+  
+  .appointment-icon {
+    font-size: 1rem;
+  }
+}

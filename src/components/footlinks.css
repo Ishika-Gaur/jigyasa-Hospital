@@ -1,0 +1,61 @@
+/* TandC.css */
+
+.tandc-container {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 20px 25px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fff;
+  color: #222;
+  line-height: 1.7;
+}
+
+.tandc-container h1 {
+  font-size: 2.8rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #111;
+}
+
+.tandc-container p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+.tandc-container ol {
+  padding-left: 20px;
+}
+
+.tandc-container li {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 20px 0 8px;
+  color: #111;
+  list-style-type: decimal;
+}
+
+.tandc-container h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0 0 8px;
+  color: #222;
+}
+
+@media screen and (max-width: 768px) {
+  .tandc-container {
+    padding: 15px;
+  }
+
+  .tandc-container h1 {
+    font-size: 2rem;
+  }
+
+  .tandc-container li {
+    font-size: 1rem;
+  }
+
+  .tandc-container p {
+    font-size: 0.95rem;
+  }
+}

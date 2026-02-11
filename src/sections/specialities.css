@@ -1,0 +1,273 @@
+.human-body-section {
+  position: relative;
+  max-width: 400px;
+  width: 100%;
+  margin: 50px auto;
+  padding: 20px;
+
+}
+.human-body-wrapper{
+  background: white;
+}
+
+.map-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
+/* Label container */
+.label-container {
+  position: absolute;
+  display: flex;
+  align-items: center;
+}
+
+.label-container.left {
+  left: 0;
+  flex-direction: row;
+}
+
+.label-container.right {
+  right: 0;
+  flex-direction: row-reverse;
+}
+.label {
+  background-color: #ffffffee;
+  color: #0a0a23;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-decoration: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  transition: 0.3s ease;
+  white-space: nowrap;
+  z-index: 10;
+}
+
+.label:hover {
+  background-color: #ffce45;
+  color: #000;
+}
+
+
+.label-container.left .connector-line {
+  margin-right: 8px;
+}
+
+.label-container.right .connector-line {
+  margin-left: 8px;
+}
+.human-body-section {
+  position: relative;
+  max-width: 400px;
+  width: 100%;
+  margin: 50px auto;
+  padding: 20px;
+}
+
+.map-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
+/* Label container */
+.label-container {
+  position: absolute;
+  display: flex;
+  align-items: center;
+}
+
+.label-container.left {
+  left: 0;
+  flex-direction: row;
+}
+
+.label-container.right {
+  right: 0;
+  flex-direction: row-reverse;
+}
+.label {
+  background-color: #ffffffee;
+  color: #0a0a23;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-decoration: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  transition: 0.3s ease;
+  white-space: nowrap;
+  z-index: 10;
+}
+
+.label:hover {
+  background-color: #ffce45;
+  color: #000;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .label {
+    font-size: 0.7rem;
+    padding: 4px 8px;
+  }
+
+  .connector-line {
+    width: 20px;
+
+  }
+
+  .human-body-section {
+    max-width: 300px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .label {
+    font-size: 0.6rem;
+    padding: 3px 6px;
+  }
+
+  .connector-line {
+    width: 15px;
+  }
+
+  .human-body-section {
+    max-width: 260px;
+  }
+}
+
+.human-body-wrapper {
+  box-sizing: border-box;
+}
+
+.various-speciality {
+  text-align: center;
+  font-size: 40px;
+  
+  color: #083e3b;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .label {
+    font-size: 0.7rem;
+    padding: 4px 8px;
+  }
+
+  .connector-line {
+    width: 20px;
+  }
+
+  .human-body-section {
+    max-width: 300px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .label {
+    font-size: 0.6rem;
+    padding: 3px 6px;
+  }
+
+  .connector-line {
+    width: 15px;
+  }
+
+  .human-body-section {
+    max-width: 260px;
+  }
+}
+
+.human-body-wrapper {
+  box-sizing: border-box;
+}
+
+
+.connector-line {
+  height: 2px;
+  background-color: orange;
+  flex-shrink: 0;
+}
+
+.label-container.left .connector-line {
+  margin-right: 8px;
+}
+
+.label-container.right .connector-line {
+  margin-left: 8px;
+}
+
+/* Connector line widths for different body parts */
+.ear .connector-line { width: 8rem; }
+.eye .connector-line { width: 9rem; }
+.throat .connector-line { width: 8rem; }
+.liver .connector-line { width: 10rem; }
+.arm .connector-line { width: 4rem; }
+.kidney .connector-line { width: 5rem; }
+.lower-back .connector-line { width: 3rem; }
+.reproductive .connector-line { width: 1.5rem; }
+.thigh .connector-line { width: 6rem; }
+.varicose .connector-line { width: 2rem; }
+.foot .connector-line { width: 8rem; }
+.brain .connector-line { width: 8rem; }
+.nose .connector-line { width: 8rem; }
+.heart .connector-line { width: 8rem; }
+.chest .connector-line { width: 7rem; }
+.elbow .connector-line { width: 2.5rem; }
+.stomach .connector-line { width: 8rem; }
+.hip .connector-line { width: 6rem; }
+.knee .connector-line { width: 7rem; }
+.ankle .connector-line { width: 7rem; }
+
+/* Mobile responsive connector lines */
+@media screen and (max-width: 768px) {
+  .ear .connector-line { width: 6rem; }
+  .eye .connector-line { width: 6rem; }
+  .throat .connector-line { width: 5rem; }
+  .liver .connector-line { width: 7.5rem; }
+  .arm .connector-line { width: 3.5rem; }
+  .kidney .connector-line { width: 5rem; }
+  .lower-back .connector-line { width: 2rem; }
+  .reproductive .connector-line { width: 2rem; }
+  .thigh .connector-line { width: 7.5rem; }
+  .varicose .connector-line { width: 2rem; }
+  .foot .connector-line { width: 6rem; }
+  .brain .connector-line { width: 6rem; }
+  .nose .connector-line { width: 6rem; }
+  .heart .connector-line { width: 4rem; }
+  .chest .connector-line { width: 6rem; }
+  .elbow .connector-line { width: 2rem; }
+  .stomach .connector-line { width: 6rem; }
+  .hip .connector-line { width: 5rem; }
+  .knee .connector-line { width: 4.5rem; }
+  .ankle .connector-line { width: 5rem; }
+}
+
+@media screen and (max-width: 480px) {
+  .ear .connector-line { width: 5rem; }
+  .eye .connector-line { width: 5.5rem; }
+  .throat .connector-line { width: 5rem; }
+  .liver .connector-line { width: 6rem; }
+  .arm .connector-line { width: 3rem; }
+  .kidney .connector-line { width: 4rem; }
+  .lower-back .connector-line { width: 1.5rem; }
+  .reproductive .connector-line { width: 0.5rem; }
+  .thigh .connector-line { width: 4rem; }
+  .varicose .connector-line { width: 2rem; }
+  .foot .connector-line { width: 5rem; }
+  .brain .connector-line { width: 5rem; }
+  .nose .connector-line { width: 6rem; }
+  .heart .connector-line { width: 4rem; }
+  .chest .connector-line { width: 6rem; }
+  .elbow .connector-line { width: 2rem; }
+  .stomach .connector-line { width: 4.5rem; }
+  .hip .connector-line { width: 4rem; }
+  .knee .connector-line { width: 4rem; }
+  .ankle .connector-line { width: 4rem; }
+}

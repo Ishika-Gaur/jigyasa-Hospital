@@ -1,0 +1,163 @@
+/* ---------- HERO SECTION ---------- */
+.testimonial-hero {
+  background-image: linear-gradient(to right, rgba(9, 33, 83, 0.9), rgba(9, 33, 83, 0.6)), url('/hospital.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.testimonial-hero h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  margin: 0;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* ---------- TESTIMONIAL SECTION ---------- */
+.testimonial-container {
+  padding: 60px 5%;
+  background-color: #f9f9f9;
+}
+
+.testimonial-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #4d2c1d;
+  margin-bottom: 40px;
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.testimonial-card {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.stars {
+  color: #ff9800;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.testimonial-card h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.testimonial-text {
+  font-size: 0.95rem;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+.testimonial-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.testimonial-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.testimonial-user img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.testimonial-user p {
+  font-size: 0.85rem;
+  color: #888;
+  margin: 0;
+}
+
+.quote-icon {
+  font-size: 24px;
+  color: #00b5ad;
+}
+
+/* ---------- RESPONSIVE MEDIA QUERIES ---------- */
+
+/* Tablets (≤1024px) */
+@media screen and (max-width: 1024px) {
+  .testimonial-hero {
+    height: 50vh;
+  }
+
+  .testimonial-hero h1 {
+    font-size: 3rem;
+  }
+
+  .testimonial-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .testimonial-title {
+    font-size: 2.2rem;
+  }
+}
+
+/* Mobiles (≤640px) */
+@media screen and (max-width: 640px) {
+  .testimonial-hero {
+    height: 45vh;
+  }
+
+  .testimonial-hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .testimonial-title {
+    font-size: 1.8rem;
+  }
+
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .testimonial-card {
+    padding: 20px;
+  }
+
+  .testimonial-card h3 {
+    font-size: 1rem;
+  }
+
+  .testimonial-text {
+    font-size: 0.9rem;
+  }
+
+  .quote-icon {
+    font-size: 20px;
+  }
+
+  .testimonial-user img {
+    width: 36px;
+    height: 36px;
+  }
+
+  .testimonial-user p {
+    font-size: 0.75rem;
+  }
+}

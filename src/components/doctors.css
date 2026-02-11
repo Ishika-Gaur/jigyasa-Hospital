@@ -1,0 +1,339 @@
+/* --------------- CSS Variables for Theming --------------- */
+:root {
+  --primary-gradient: linear-gradient(135deg, #0dbd9d 0%, #08a085 100%);
+  --primary-color: #0dbd9d;
+  --primary-dark: #08a085;
+  --secondary-color: #092153;
+  --text-dark: #2c3e50;
+  --text-light: #555;
+  --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --card-shadow-hover: 0 12px 40px rgba(13, 189, 157, 0.15);
+  --border-radius: 16px;
+  --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* --------------- Hero Section --------------- */
+.doctors-hero {
+  background-image: linear-gradient(to right, rgba(9, 33, 83, 0.9), rgba(9, 33, 83, 0.6)),
+    url('/hospital.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 65vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  padding: 0 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.doctors-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 50%, rgba(9, 33, 83, 0.1) 0%, transparent 50%);
+  animation: pulseGlow 8s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+}
+
+.doctors-hero h1 {
+  font-size: 4.5rem;
+  font-weight: 800;
+  margin: 0;
+  text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+  letter-spacing: -1px;
+  position: relative;
+  z-index: 1;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --------------- Doctors Grid --------------- */
+.doctors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 35px;
+  padding: 60px 6%;
+  background: linear-gradient(to bottom, #f8fafb 0%, #ffffff 100%);
+}
+
+.doctor-card {
+  background: #ffffff;
+  border-radius: var(--border-radius);
+  text-align: center;
+  padding: 0;
+  box-shadow: var(--card-shadow);
+  transition: var(--transition);
+  overflow: hidden;
+  position: relative;
+  border: 1px solid rgba(13, 189, 157, 0.08);
+}
+
+.doctor-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--primary-gradient);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.doctor-card:hover::before {
+  transform: scaleX(1);
+}
+
+.doctor-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--card-shadow-hover);
+  border-color: rgba(13, 189, 157, 0.2);
+}
+
+/* Doctor Image with Overlay Effect */
+.doctor-image {
+  width: 100%;
+  height: 320px;
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.doctor-image::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40%;
+  background: linear-gradient(to top, rgba(9, 33, 83, 0.7) 0%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.doctor-card:hover .doctor-image::after {
+  opacity: 1;
+}
+
+.doctor-card:hover .doctor-image {
+  transform: scale(1.05);
+}
+
+/* Card Content Area */
+.doctor-card > * {
+  padding: 0 25px;
+}
+
+.doctor-card > .doctor-image {
+  padding: 0;
+}
+
+/* Social Icons with Enhanced Styling */
+.doctor-socials {
+  margin: 20px 0 15px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.doctor-socials i {
+  background: var(--primary-gradient);
+  color: white;
+  width: 42px;
+  height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 16px;
+  transition: var(--transition);
+  box-shadow: 0 4px 12px rgba(13, 189, 157, 0.2);
+  cursor: pointer;
+}
+
+.doctor-socials i:hover {
+  background: white;
+  color: var(--primary-color);
+  transform: translateY(-4px) rotate(360deg);
+  box-shadow: 0 6px 20px rgba(13, 189, 157, 0.3);
+}
+
+/* Doctor Text with Enhanced Typography */
+h3 {
+  margin: 20px 0 12px;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  letter-spacing: -0.3px;
+  line-height: 1.3;
+  transition: color 0.3s ease;
+}
+
+.doctor-card:hover h3 {
+  color: var(--primary-color);
+}
+
+.doctor-title {
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 18px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  letter-spacing: 0.2px;
+  padding: 8px 12px;
+  background: linear-gradient(135deg, rgba(13, 189, 157, 0.08) 0%, rgba(13, 189, 157, 0.03) 100%);
+  border-radius: 8px;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.doctor-desc {
+  font-size: 0.98rem;
+  color: var(--text-light);
+  line-height: 1.75;
+  margin: 12px 0 25px;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+}
+
+/* --------------- Responsive Breakpoints --------------- */
+@media (max-width: 991px) {
+  .doctors-hero {
+    height: 55vh;
+    background-attachment: scroll;
+  }
+
+  .doctors-hero h1 {
+    font-size: 3.5rem;
+  }
+
+  .doctors-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    padding: 50px 5%;
+    gap: 30px;
+  }
+
+  .doctor-image {
+    height: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .doctors-hero {
+    height: 50vh;
+  }
+
+  .doctors-hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .doctors-grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    padding: 40px 4%;
+  }
+
+  .doctor-image {
+    height: 260px;
+  }
+
+  .doctor-card > * {
+    padding: 0 20px;
+  }
+
+  .doctor-desc {
+    font-size: 0.92rem;
+    margin-bottom: 20px;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    margin: 18px 0 10px;
+  }
+
+  .doctor-title {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .doctors-hero {
+    height: 45vh;
+  }
+
+  .doctors-hero h1 {
+    font-size: 2rem;
+  }
+
+  .doctors-grid {
+    grid-template-columns: 1fr;
+    padding: 35px 4%;
+    gap: 25px;
+  }
+
+  .doctor-card {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .doctor-card > * {
+    padding: 0 18px;
+  }
+
+  .doctor-image {
+    height: 240px;
+  }
+
+  .doctor-socials {
+    margin: 18px 0 12px;
+    gap: 10px;
+  }
+
+  .doctor-socials i {
+    width: 38px;
+    height: 38px;
+    font-size: 14px;
+  }
+
+  .doctor-desc {
+    font-size: 0.88rem;
+    margin-bottom: 20px;
+  }
+
+  h3 {
+    font-size: 1.15rem;
+    margin: 15px 0 10px;
+  }
+
+  .doctor-title {
+    font-size: 0.88rem;
+    padding: 6px 10px;
+  }
+}

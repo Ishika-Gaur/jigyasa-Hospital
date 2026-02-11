@@ -1,0 +1,288 @@
+.expert-section {
+  padding: 60px 5%;
+  text-align: center;
+  background-color: #f9fafb;
+}
+
+.expert-section-subtitle {
+  display: inline-block;
+  font-size: 16px;
+  color: #25b1a8;
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  background-color: #cff0ef;
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+.expert-section-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 15px;
+}
+
+.expert-section-description {
+  max-width: 800px;
+  margin: 0 auto 40px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: black;
+}
+
+/* === Swiper Container === */
+.doctor-swiper {
+  padding: 20px 5% 60px;
+  position: relative;
+}
+
+.doctor-swiper .swiper-slide {
+  height: auto;
+  display: flex;
+}
+
+/* === Doctor Card === */
+.home-doctor-card {
+  margin-left: 40px;
+  width: 80%;
+  background-color: #fff;
+  border-radius: 12px;
+  text-align: center;
+  padding: 20px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  flex: 0 0 80%;
+  scroll-snap-align: start;
+  min-width: 280px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.home-doctor-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Doctor Image - Desktop */
+.home-doctor-image {
+  width: 100%;
+  height: 280px;
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+h3 {
+  margin: 8px 0 4px;
+  font-size: 1.1rem;
+}
+
+.home-doctor-title {
+  font-weight: bold;
+  color: #00b5ad;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  line-height: 1.3;
+}
+
+.home-doctor-desc {
+  font-size: 0.85rem;
+  color: #555;
+  line-height: 1.4;
+  flex-grow: 1;
+}
+
+/* === View All Doctors Button === */
+.view-all-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  padding-bottom: 20px;
+}
+
+.view-all-button {
+  padding: 12px 32px;
+  background-color: #00b5ad;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 181, 173, 0.2);
+}
+
+.view-all-button:hover {
+  background-color: #019c95;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 181, 173, 0.3);
+}
+
+/* Swiper pagination bullets */
+.swiper-pagination {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.swiper-pagination-bullet {
+  background: #00b5ad;
+  opacity: 0.6;
+  width: 10px;
+  height: 10px;
+  margin: 0 4px !important;
+  transition: all 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+/* === Responsive Breakpoints === */
+
+/* Tablets (768px and below) */
+@media (max-width: 768px) {
+  .expert-section {
+    padding: 40px 4%;
+  }
+
+  .expert-section-title {
+    font-size: 28px;
+  }
+
+  .expert-section-description {
+    font-size: 15px;
+    margin-bottom: 30px;
+  }
+
+  .doctor-swiper {
+    padding: 15px 3% 50px;
+  }
+
+  .home-doctor-card {
+    margin-left: 0;
+    width: 90%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 16px;
+  }
+
+  /* Image badi - 65% card height */
+  .home-doctor-image {
+    height: 320px;
+  }
+
+  /* Content kam */
+  h3 {
+    font-size: 1rem;
+    margin: 6px 0 3px;
+  }
+
+  .home-doctor-title {
+    font-size: 0.8rem;
+    margin-bottom: 6px;
+    line-height: 1.2;
+  }
+
+  .home-doctor-desc {
+    font-size: 0.75rem;
+    line-height: 1.3;
+  }
+
+  .view-all-button {
+    padding: 11px 28px;
+    font-size: 15px;
+  }
+}
+
+/* Mobile devices (480px and below) */
+@media (max-width: 480px) {
+  .expert-section {
+    padding: 35px 3%;
+  }
+
+  .expert-section-subtitle {
+    font-size: 14px;
+  }
+
+  .expert-section-title {
+    font-size: 24px;
+  }
+
+  .expert-section-description {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .doctor-swiper {
+    padding: 10px 2% 45px;
+  }
+
+  .home-doctor-card {
+    width: 92%;
+    padding: 14px;
+  }
+
+  /* Image aur badi - 70% card height */
+  .home-doctor-image {
+    height: 340px;
+  }
+
+  /* Content aur kam */
+  h3 {
+    font-size: 0.95rem;
+    margin: 5px 0 2px;
+  }
+
+  .home-doctor-title {
+    font-size: 0.75rem;
+    margin-bottom: 4px;
+  }
+
+  .home-doctor-desc {
+    font-size: 0.7rem;
+    line-height: 1.25;
+  }
+
+  .view-all-button {
+    padding: 10px 24px;
+    font-size: 14px;
+  }
+}
+
+/* Small mobile (375px and below) */
+@media (max-width: 375px) {
+  .home-doctor-card {
+    width: 95%;
+    padding: 12px;
+  }
+
+  /* Image maximum badi */
+  .home-doctor-image {
+    height: 300px;
+  }
+
+  /* Content minimum */
+  h3 {
+    font-size: 0.9rem;
+  }
+
+  .home-doctor-title {
+    font-size: 0.72rem;
+  }
+
+  .home-doctor-desc {
+    font-size: 0.68rem;
+  }
+}

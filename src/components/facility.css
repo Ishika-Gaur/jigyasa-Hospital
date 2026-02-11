@@ -1,0 +1,190 @@
+/* ------------------- HERO SECTION ------------------- */
+.facility-hero {
+  background-image: linear-gradient(to right, rgba(9, 33, 83, 0.9), rgba(9, 33, 83, 0.6)),
+    url('/hospital.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.facility-hero h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  margin: 0;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* ------------------- OFFER SECTION ------------------- */
+.offer-section {
+  padding: 60px 5%;
+  text-align: center;
+  background-color: #f9fafb;
+}
+
+.section-subtitle {
+  font-size: 20px;
+  color: #25B1A8;
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.section-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 15px;
+}
+
+.section-description {
+  max-width: 800px;
+  margin: 0 auto 40px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: black;
+}
+
+/* ------------------- CARD SECTION ------------------- */
+.card-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.offer-card {
+  background-color: #ffffff;
+  padding: 25px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+}
+
+.offer-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+  border: 2px solid #25B1A8;
+  background-color: #ade1dd;
+}
+
+.card-icon {
+  font-size: 36px;
+  color: #25B1A8;
+  margin-bottom: 15px;
+}
+
+.offer-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #00b5ad;
+  margin-bottom: 10px;
+}
+
+.offer-card p {
+  font-size: 14px;
+  color: #4b5563;
+  line-height: 1.5;
+}
+
+/* ------------------- RESPONSIVE ------------------- */
+
+/* Tablet (≤1024px) */
+@media screen and (max-width: 1024px) {
+  .facility-hero {
+    height: 50vh;
+  }
+
+  .facility-hero h1 {
+    font-size: 3rem;
+  }
+
+  .section-title {
+    font-size: 30px;
+  }
+
+  .card-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Small Tablet / Large Mobile (≤768px) */
+@media screen and (max-width: 768px) {
+  .facility-hero {
+    height: 45vh;
+  }
+
+  .facility-hero h1 {
+    font-size: 2.4rem;
+  }
+
+  .section-title {
+    font-size: 26px;
+  }
+
+  .section-description {
+    font-size: 15px;
+  }
+
+  .card-icon {
+    font-size: 32px;
+  }
+
+  .offer-card h3 {
+    font-size: 17px;
+  }
+
+  .offer-card p {
+    font-size: 13.5px;
+  }
+}
+
+/* Mobile (≤480px) */
+@media screen and (max-width: 480px) {
+  .facility-hero {
+    height: 40vh;
+  }
+
+  .facility-hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .section-subtitle {
+    font-size: 16px;
+  }
+
+  .section-title {
+    font-size: 22px;
+  }
+
+  .section-description {
+    font-size: 14px;
+  }
+
+  .card-section {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .offer-card {
+    padding: 20px 16px;
+  }
+
+  .card-icon {
+    font-size: 30px;
+  }
+
+  .offer-card h3 {
+    font-size: 16px;
+  }
+
+  .offer-card p {
+    font-size: 13px;
+  }
+}
