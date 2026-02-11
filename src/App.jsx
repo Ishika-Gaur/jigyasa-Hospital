@@ -2,7 +2,7 @@ import React from "react";
 
 import { Route, Routes } from "react-router-dom";
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import ScrollToTop from "./components/ScrollToTop";
+import ScrollToTop from "./components/scrollToTop";
 
 
 import Navbar from "./components/Navbar";
